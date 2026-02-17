@@ -3,7 +3,7 @@ import fs from "fs/promises";
 import path from "path";
 import { v4 as uuid } from "uuid";
 
-/* ============================
+/* 
    TYPES
 ============================ */
 
@@ -26,7 +26,7 @@ interface Post {
   shareCount: number;
 }
 
-/* ============================
+/* 
    SIMPLE MUTEX (Concurrency Safety)
 ============================ */
 
@@ -51,7 +51,7 @@ class Mutex {
 }
 
 
-/* ============================
+/* 
    CACHE ABSTRACTION
 ============================ */
 
@@ -86,7 +86,7 @@ class InMemoryCache implements Cache {
   }
 }
 
-/* ============================
+/* 
    JSON REPOSITORY
 ============================ */
 
@@ -115,7 +115,7 @@ class JsonPostRepository {
   }
 }
 
-/* ============================
+/* 
    CURSOR UTILS
 ============================ */
 
@@ -127,7 +127,7 @@ function decodeCursor(cursor: string): any {
   return JSON.parse(Buffer.from(cursor, "base64").toString());
 }
 
-/* ============================
+/* 
    SERVICE LAYER
 ============================ */
 
@@ -256,7 +256,7 @@ class PostService {
   }
 }
 
-/* ============================
+/* 
    EXPRESS APP
 ============================ */
 
@@ -329,3 +329,4 @@ app.get("/", (req, res) => {
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
 });
+
